@@ -29,7 +29,7 @@ const postMessage = async (req, res) => {
     love: 0,
     cry: 0,
     like: 0,
-    wow: 0,
+    happy: 0,
     angry: 0,
     isHover: false,
     time: time,
@@ -79,9 +79,9 @@ const addLike = async (req, res) => {
   }
 };
 // wow
-const addWow = async (req, res) => {
+const addHappy = async (req, res) => {
   const message = await Message.findById(req.params.id);
-  message.wow = message.wow + 1;
+  message.happy = message.happy + 1;
   try {
     await message.save();
     res.status(200).json(message);
@@ -109,5 +109,5 @@ module.exports = {
   addCry,
   addLike,
   addLove,
-  addWow,
+  addHappy,
 };

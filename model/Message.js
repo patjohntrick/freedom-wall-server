@@ -22,7 +22,7 @@ const messageSchema = mongoose.Schema(
     },
     like: Number,
     love: Number,
-    wow: Number,
+    happy: Number,
     cry: Number,
     angry: Number,
     time: {

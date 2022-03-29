@@ -11,7 +11,7 @@ const {
   addCry,
   addLike,
   addLove,
-  addWow,
+  addHappy,
 } = require("./controllers/Methods");
 
 // Middleware
@@ -31,7 +31,7 @@ app.post("/messages/new", postMessage);
 // GET/POST Reactions
 app.get("/messages/like/:id", addLike);
 app.get("/messages/love/:id", addLove);
-app.get("/messages/wow/:id", addWow);
+app.get("/messages/happy/:id", addHappy);
 app.get("/messages/cry/:id", addCry);
 app.get("/messages/angry/:id", addAngry);
 
