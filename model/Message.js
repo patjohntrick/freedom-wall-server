@@ -25,6 +25,7 @@ const messageSchema = mongoose.Schema(
     happy: Number,
     cry: Number,
     angry: Number,
+    bgColor: String,
     time: {
       type: String,
       immutable: false,

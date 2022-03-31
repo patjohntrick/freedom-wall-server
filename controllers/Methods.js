@@ -17,9 +17,32 @@ const getMessageById = async (req, res) => {
     res.status(400);
   }
 };
+// const getMessageSearch = async (req, res) => {
+//   const message = await Message.find()
+// }
 
 // POST Message
 const postMessage = async (req, res) => {
+  const colors = [
+    ["#DE7119"],
+    ["#57837B"],
+    ["#39A6A3"],
+    ["#7FCD91"],
+    ["#F55C47"],
+    ["#4AA96C"],
+    ["#FFC93C"],
+    ["#8CBA51"],
+    ["#FF6F5E"],
+    ["#61234E"],
+    ["#333C83"],
+    ["#3A3845"],
+    ["#F0A500"],
+    ["#FFCC1D"],
+  ];
+  const random = Math.round(Math.random() * colors.length);
+  const randomColor = `${colors[random]}`;
+  // console.log(randomColor);
+
   const body = req.body;
   const date = new Date();
   const time = date.toLocaleTimeString();
@@ -31,7 +54,7 @@ const postMessage = async (req, res) => {
     like: 0,
     happy: 0,
     angry: 0,
-    isHover: false,
+    bgColor: randomColor,
     time: time,
   };
   const message = await new Message(addMessage);
